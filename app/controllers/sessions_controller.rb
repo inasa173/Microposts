@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
-    if login(email,password)
+    if login(email, password)
       flash[:success] = 'ログインに成功しました。'
       redirect_to @user
     else
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     
   private
     
-  def login(email,password)
+  def login(email, password)
     @user = User.find_by(email: email)
     if @user && @user.authenticate(password)
       # ログイン成功
