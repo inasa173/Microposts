@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(params[:id])
+    logger.debug(@user)
     @favorites = @user.favorite_microposts.order('created_at DESC').page(params[:page])
     counts(@user)
   end

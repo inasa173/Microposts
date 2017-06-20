@@ -9,10 +9,11 @@
       </div>
     </div>
     <%= render 'relationships/follow_button', user: @user %>
-  </aside>
-  <div class="col-xs-8">
-    <%= render 'links' %>
-    <%= render 'microposts/microposts', microposts: @favorites, user: @user %>
-  </div>
+    </aside>
+    <div class="col-xs-8">
+      <%= render 'links' %>
+      <%= render 'microposts/microposts', microposts: @favorites, user: @user %>
+      <%= debug @favorites %>
+    </div>
   </div>
 </div>
